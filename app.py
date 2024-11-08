@@ -9,7 +9,7 @@ st.title("UNGA Disarmament Resolution Tracker")
 @st.cache_data
 def load_UN_database():
     # Replace this with your actual data loading code
-    df =  pd.read_csv("./disarmament_un_resolutions_position.csv")
+    df =  pd.read_csv("disarmament_un_resolutions_position.csv")
     return df
 
 # Load the DataFrame (cached after the first load)
