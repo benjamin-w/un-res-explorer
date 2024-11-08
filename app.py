@@ -8,7 +8,7 @@ st.title("UNGA Disarmament Resolution Tracker")
 
 @st.cache_data
 def load_UN_database():
-    dtype_dict = {3: str, 16: str, 20: str, 24: str, 26: str, 42: str, 288: str, 289: str}
+    dtype_dict = {3: str, 17: str, 21: str, 25: str, 27: str, 289: str, 290: str}
     df =  pd.read_csv("disarmament_un_resolutions_position.csv", dtype=dtype_dict)
     return df
 
