@@ -3,20 +3,13 @@ import pandas as pd
 import numpy as np
 from io import BytesIO
 
-<<<<<<< HEAD
 st.title("UNGA Disarmament Resolution Tracker")
-=======
-st.title("UNGA Resolution Tracker")
->>>>>>> 9bf741d (initial commit)
+
 
 @st.cache_data
 def load_UN_database():
     # Replace this with your actual data loading code
-<<<<<<< HEAD
     df =  pd.read_csv("disarmament_un_resolutions_position.csv")
-=======
-    df =  pd.read_csv("../data/2024-03-13_un_resolutions_positions.csv")
->>>>>>> 9bf741d (initial commit)
     return df
 
 # Load the DataFrame (cached after the first load)
