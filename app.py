@@ -8,11 +8,11 @@ st.title("UNGA Disarmament Resolution Tracker")
 
 @st.cache_data
 def load_UN_database():
-    # Replace this with your actual data loading code
-    df =  pd.read_csv("disarmament_un_resolutions_position.csv", dtype=str)
+    dtype_dict = {3: str, 16: str, 20: str, 24: str, 26: str, 42: str, 288: str, 289: str}
+    df =  pd.read_csv("disarmament_un_resolutions_position.csv", dtype=dtype_dict)
     return df
 
-# Load the DataFrame (cached after the first load)
+
 df = load_UN_database()
 
 un_countries_iso_alpha3 = {
@@ -260,11 +260,9 @@ def create_excel_file(dframe):
     output.seek(0)  # Rewind the buffer
     return output
 
-# Create the Excel file
 excel_file = create_excel_file(df_merged)
 
 if excel_file:
-    # Create a download button in Streamlit
     st.download_button(
         label="Download voting history as Excel",
         data=excel_file,
